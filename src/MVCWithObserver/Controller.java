@@ -20,7 +20,7 @@ public class Controller extends javax.swing.JFrame {
         initComponents();
         aModel.addObserver(view1);
         aModel.addObserver(view2);
-        aModel.setData("Initial text ...");
+        aModel.setData("Initial text1 ...");
         
     }
 

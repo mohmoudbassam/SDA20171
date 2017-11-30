@@ -12,7 +12,7 @@ package CRS.AppLogic;
 public class Student {
     private String name;
     private String major;
-    private double grde;
+    private double grade;
 
     public String getName() {
         return name;
@@ -30,12 +30,12 @@ public class Student {
         this.major = major;
     }
 
-    public double getGrde() {
-        return grde;
+    public double getGrade() {
+        return grade;
     }
 
-    public void setGrde(double grde) {
-        this.grde = grde;
+    public void setGrade(double grde) {
+        this.grade = grde;
     }
     
 }

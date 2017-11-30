@@ -55,7 +55,7 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel1.setText("Login Name:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Password");
+        jLabel2.setText("Password:");
 
         jTextFieldLoginName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -97,9 +97,9 @@ public class loginScreen extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel1))
                             .addGap(31, 31, 31)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldLoginName, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldLoginName, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                                .addComponent(jTextFieldPassword)))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(46, 46, 46)
                             .addComponent(jButton1)
@@ -138,7 +138,8 @@ public class loginScreen extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String loginName = jTextFieldLoginName.getText();
-        String password = jTextFieldPassword.getText();
+        char data[] = jTextFieldPassword.getPassword();
+        String password = String.valueOf(data);
         if(loginName.equals("") || password.equals(""))
             jLabelError.setText("You must enter all values");
         else if(verifyUser(loginName, password)){
@@ -148,6 +149,9 @@ public class loginScreen extends javax.swing.JFrame {
         }
         else
             jLabelError.setText("INVALID user");
+        
+        jTextFieldLoginName.setText("");
+        jTextFieldPassword.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
